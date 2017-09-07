@@ -1,7 +1,7 @@
 ## R Script to process SCD data ##
 
 ## --------------------- Load data -----------------------------------
-SCD.full <- read.csv("SCDSpecimens.csv") #note need someway to ignore first column
+SCD.full <- read.csv("SCDSpecimens.csv", row.names=NULL) #row.names=NULL ignores the first column
 head(SCD.full)
 summary(SCD.full, maxsum=40)
 
