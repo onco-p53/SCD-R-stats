@@ -5,6 +5,12 @@ SCD.full <- read.csv("SCDSpecimens.csv") #note need someway to ignore first colu
 head(SCD.full)
 summary(SCD.full, maxsum=40)
 
+#summarise the bacteria or fungi
+summary(PreferredName_C1)
+
+#summarise the hosts
+summary(PreferredName_C2)
+
 #ggplot code for kingdom
 attach(SCD.full) #this means we don't need the $ sign
 require(ggplot2)
@@ -33,9 +39,6 @@ print_bars <- p + geom_bar()+ coord_flip()
 ggsave(print_bars, file='ICMP_kingdoms.pdf', width=10, height=10)
 
 
-#summarise the hosts
-summary(PreferredName_C2)
-
 #ggplot code for host (too many)
 attach(SCD.full) #this means we don't need the $ sign
 require(ggplot2)
@@ -44,4 +47,6 @@ p <- p + theme(axis.text.x=element_text(angle=-90, hjust=0))
 p + geom_bar()+ coord_flip()
 print_bars <- p + geom_bar()+ coord_flip()
 ggsave(print_bars, file='ICMP_kingdoms.pdf', width=10, height=10)
+
+#minor test github update
 
