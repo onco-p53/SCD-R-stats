@@ -1,5 +1,8 @@
 ## R Script to process SCD data ##
 
+
+# OK the actual problem is the export file. Try "leaf instead???
+
 ## --------------------- Load data -----------------------------------
 SCD.full <- read.csv("SCDSpecimens.csv", row.names=NULL) #row.names=NULL ignores the first column
 head(SCD.full)
@@ -19,6 +22,15 @@ p <- p + theme(axis.text.x=element_text(angle=-90, hjust=0))
 p + geom_histogram()+ coord_flip()
 print_bars <- p + geom_histogram()+ coord_flip()
 ggsave(print_bars, file='ICMP_kingdoms.pdf', width=10, height=10)
+
+#plain code for a kingdom barchart
+attach(ICMP.dump) 
+require(ggplot2)
+p <- ggplot(ICMP.dump, aes(SpecimenType)) + labs(title = "Cultures in the ICMP by Kingdom") + labs(x = "Taxon", y = "number of isolates")
+p <- p + theme(axis.text.x=element_text(angle=-90, hjust=0))
+p + geom_bar()+ coord_flip()
+print_bars <- p + geom_bar()+ coord_flip()
+ggsave(print_bars, file='ICMP_kingdoms.png', width=7, height=7)
 
 #ggplot code for country
 attach(SCD.full) #this means we don't need the $ sign
