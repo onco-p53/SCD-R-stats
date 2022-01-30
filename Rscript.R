@@ -1,5 +1,7 @@
 ## R Script to process SCD data ##
 
+#Original version 2017, new version 2022
+
 
 # OK the actual problem is the export file. Try "leaf instead???
 
