@@ -1,6 +1,28 @@
 ## R Script to process SCD data ##
 
 #Original version 2017, new version 2022
+#Author: Bevan Weir
+
+#============ Load all library packages needed ================
+
+library(tidyverse)
+library(lubridate)
+library(RColorBrewer)
+library(svglite)
+library(lubridate)
+library(readr)
+
+#============ Load data from csv files ================
+
+SCD.df <- read_csv("SCDSpecimens2.csv")
+head(SCD.df)
+tail(SCD.df)
+summary(SCD.df, maxsum=10)
+
+SCD.df %>% 
+  glimpse
+
+#the export file is borked. non standard csv file
 
 
 # OK the actual problem is the export file. Try "leaf instead???
