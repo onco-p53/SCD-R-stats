@@ -6,10 +6,9 @@
 #============ Load all library packages needed ================
 
 library(tidyverse)
-library(lubridate)
-library(RColorBrewer)
-library(svglite)
-library(lubridate)
+#library(lubridate)
+#library(RColorBrewer)
+#library(lubridate)
 library(readr)
 
 #============ Load data from csv files ================
